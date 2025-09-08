@@ -20,5 +20,5 @@ const routeSchema = new mongoose.Schema({
 
 routeSchema.index({ "stops.coordinates": "2dsphere" }); // for geo queries
 
-const Route = mongoose.model("Route", routeSchema);
+const Route = mongoose.models.Route || mongoose.model("Route", routeSchema);
 export default Route;
